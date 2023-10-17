@@ -1,9 +1,8 @@
 ## Compile the tests
 
 cmake -B build
-cd build
-cmake ..
-cmake --build .
+cmake --build ./build
+./bin/unit_tests
 
 
 ## Running the tests
