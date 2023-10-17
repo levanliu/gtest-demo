@@ -1,0 +1,8 @@
+Package: gtest
+Version: 1.11.0
+Port-Version: 3
+Architecture: x64-linux
+Multi-Arch: same
+Abi: a1e36a8e34fd8b32657a57fe729eb203aa338fd428c1cd6a8d4a3e1470263c40
+Description: GoogleTest and GoogleMock testing frameworks
+Status: install ok installed

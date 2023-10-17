@@ -10,13 +10,12 @@ FetchContent_MakeAvailable(gtest)
 
 add_executable(
     unit_tests
-    example_add.cpp
-    example_subtract.cpp
+    testTokenizer.cpp
     )
 
 target_link_libraries(unit_tests
   PRIVATE
-    example
+    tokenizer
     gtest_main
   )
 
