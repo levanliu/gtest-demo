@@ -1,16 +1,20 @@
-add_library(tokenizer)
+add_library(tokenizer 
+)
 
 target_sources(tokenizer
   PRIVATE
     tokenizer.cpp
+
   PUBLIC
-    tokenizer.h
+    tokenizer.hpp
+    parser.hpp
   )
 
 target_include_directories(tokenizer
   PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}
   )
+
 
 # we use this to get code coverage
 # flags are only valid with the GNU compiler and on Linux

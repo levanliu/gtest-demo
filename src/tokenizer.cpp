@@ -1,4 +1,4 @@
-#include "tokenizer.h"
+#include "tokenizer.hpp"
 
 std::vector<Token> tokenizer(std::string code) {
   std::vector<Token> tokens;
@@ -14,14 +14,14 @@ std::vector<Token> tokenizer(std::string code) {
     }
 
     if (currentChar == '(') {
-      Token token(Paren, "(");
+      Token token(TokenTypes::Paren, "(");
       tokens.push_back(token);
       current++;
       continue;
     }
 
     if (currentChar == ')') {
-      Token token(Paren, ")");
+      Token token(TokenTypes::Paren, ")");
       tokens.push_back(token);
       current++;
       continue;
@@ -33,7 +33,7 @@ std::vector<Token> tokenizer(std::string code) {
         value += currentChar;
         currentChar = code[++current];
       }
-      Token token(Name,value);
+      Token token(TokenTypes::Name,value);
       tokens.push_back(token);
       continue;
     }
@@ -44,7 +44,7 @@ std::vector<Token> tokenizer(std::string code) {
         value += currentChar;
         currentChar = code[++current];
       }
-      Token token(Number,value);
+      Token token(TokenTypes::Number,value);
       tokens.push_back(token);
       continue;
     }
