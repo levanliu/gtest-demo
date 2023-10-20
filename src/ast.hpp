@@ -39,29 +39,29 @@ struct RootNode : Node {
   std::vector<std::shared_ptr<Node>> context;
 };
 
-
-std::shared_ptr<StringLiteralNode> createStringLiteralNode(std::string value)
-{
-    auto node = std::make_shared<StringLiteralNode>();
-    node->value = value;
-    return node;
+std::shared_ptr<StringLiteralNode> createStringLiteralNode(std::string value) {
+  auto node = std::make_shared<StringLiteralNode>();
+  node->value = value;
+  node->type = NodeTypes::StringLiteral;
+  return node;
 }
 
-std::shared_ptr<RootNode> createRootNode()
-{
-    return std::make_shared<RootNode>();
+std::shared_ptr<RootNode> createRootNode() {
+  auto node = std::make_shared<RootNode>();
+  node->type = NodeTypes::Program;
+  return node;
 }
 
-std::shared_ptr<NumberLiteralNode> createNumberLiteralNode(std::string value)
-{
-    auto node = std::make_shared<NumberLiteralNode>();
-    node->value = value;
-    return node;
+std::shared_ptr<NumberLiteralNode> createNumberLiteralNode(std::string value) {
+  auto node = std::make_shared<NumberLiteralNode>();
+  node->value = value;
+  node->type = NodeTypes::NumberLiteral;
+  return node;
 }
 
-std::shared_ptr<CallExpressionNode> createCallExpression(std::string name)
-{
-    auto node = std::make_shared<CallExpressionNode>();
-    node->name = name;
-    return node;
+std::shared_ptr<CallExpressionNode> createCallExpression(std::string name) {
+  auto node = std::make_shared<CallExpressionNode>();
+  node->name = name;
+  node->type = NodeTypes::CallExpression;
+  return node;
 }

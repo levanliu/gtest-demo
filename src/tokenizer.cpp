@@ -27,28 +27,27 @@ std::vector<Token> tokenizer(std::string code) {
       continue;
     }
 
-    if( isalpha(currentChar) ){
+    if (isalpha(currentChar)) {
       std::string value = "";
-      while (isalpha(currentChar) && current<code.size()) {
+      while (isalpha(currentChar) && current < code.size()) {
         value += currentChar;
         currentChar = code[++current];
       }
-      Token token(TokenTypes::Name,value);
+      Token token(TokenTypes::Name, value);
       tokens.push_back(token);
       continue;
     }
 
-    if( isalnum(currentChar) ){
+    if (isalnum(currentChar)) {
       std::string value = "";
-      while (isalnum(currentChar) && current<code.size()) {
+      while (isalnum(currentChar) && current < code.size()) {
         value += currentChar;
         currentChar = code[++current];
       }
-      Token token(TokenTypes::Number,value);
+      Token token(TokenTypes::Number, value);
       tokens.push_back(token);
       continue;
     }
-
   }
   return tokens;
 }

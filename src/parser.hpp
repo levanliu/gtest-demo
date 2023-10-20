@@ -1,8 +1,8 @@
 #pragma once
 #include "../src/tokenizer.hpp"
 #include "./ast.hpp"
-#include <stdexcept>
 #include <iostream>
+#include <stdexcept>
 
 std::shared_ptr<Node> walk(std::vector<Token> &tokens,
                            int &current); // declaration
@@ -54,4 +54,3 @@ std::shared_ptr<Node> walk(std::vector<Token> &tokens,
 
   throw std::runtime_error("token: " + token.value);
 }
-
